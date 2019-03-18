@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script>
+	let a = parseInt(prompt('Введите число а:'));
+	let b = parseInt(prompt('Введите число b:'));
+	let res;
+	if ((a >= 0) && (b >= 0)) {
+		res = a - b;
+	} else if ((a < 0) && (b < 0)) {
+		res = a * b;
+	} else if (((a >= 0) && (b < 0)) || ((a < 0) && (b >= 0 ))) {
+		res = a + b;
+	}
+	alert(res);
+</script>
