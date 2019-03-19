@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+	//Подсмотрел в интернете решение на другом ЯП. Ну все же лучше чем ничего))
+	let val = parseFloat(prompt('Введите число для возведения в степень: '));
+	let pow = parseInt(prompt('Введите необходимую степень для возведения числа: '))
+	function power(val, pow) {
+		if (pow == 0) {
+			return 1;
+		} else if (pow > 0) {
+			return val * power(val, pow - 1);
+		} else {
+			return 1 / power(val, -pow);
+		}
+	}
+	alert(power(val, pow));
+</script>
