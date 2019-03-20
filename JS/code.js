@@ -1,40 +1,67 @@
 "use strict";
+//ЗАДАНИЕ 1
+let a = [
+	 [{name: 'Mary', age: 23}, {name: 'Mike', age: 45}, {name: 'Nick', age: 11}],
+	 [{name: 'Adam', age: 56}, {name: 'Sara', age: 21}, {name: 'Don', age: 22}],
+	 [{name: 'Karl', age: 34}, {name: 'Marta', age: 76}, {name: 'John', age: 19}]
+]; 
 
-// ЗАДАНИЕ 4
- function adition(arg1, arg2) {
- 	return(arg1 + arg2);
- }
- alert(adition(20, 10));
 
- function subtraction(arg1, arg2) {
- 	return(arg1 - arg2);
- }
- alert(subtraction(20, 10));
+let b = [];
+a.forEach(function (arr) {
+	b.push(arr.slice());
+	let c = [];
+	b.forEach(function (newArr) {
+		c.push(Object.assign({}, newArr));
+	});
+});
 
- function multiplication(arg1, arg2) {
- 	return(arg1 * arg2);
- }
- alert(multiplication(20, 10));
+/*let a = [{name: 'Mary', age: 23}, {name: 'Mike', age: 45}, {name: 'Nick', age: 11}];
 
-  function division(arg1, arg2) {
- 	return(arg1 / arg2);
- }
- alert(division(20, 10));
+let b = [];
+a.forEach(function (arr) {
+		b.push(Object.assign({}, arr));
+});*/
 
-// ЗАДАНИЕ 5
-let operation = prompt('Введите операцию, которую хотите выполнить:');
+//b[2][2].age = 5665;
 
-function mathOperation(arg1, arg2, operation) {
- 	switch (operation) {
- 		case 'adition':
-	 		return adition(arg1, arg2);
-	 	case 'subtraction':
-	 		return subtraction(arg1, arg2);
-	 	case 'multiplication':
-	 		return multiplication(arg1, arg2);
-	 	case 'division':
-	 		return division(arg1, arg2);
- 	}
+console.log(a);
+console.log(b);
+
+//ЗАДАНИЕ 2 ??
+let basket = [	{product: 'iPhone', price: 500}, 
+				{product: 'Samsung', price: 450}, 
+				{product: 'Sony', price: 400} 
+			];
+
+function countBasketPrice() {
+	for (let i = 0; i < basket.length; i++) {
+		let sum = 0;
+		for (let j = 0; j < basket[i].length; j++) {
+			//sum = sum + basket[i].price;
+			//basket[i].price = sum;
+			basket[i].price = 'fdf';
+		}
+	}
 }
 
-alert(mathOperation(10, 30, operation));
+console.log(countBasketPrice());
+
+//ЗАДАНИЕ 3
+let count;
+for (count = 0; count <= 9; count++) 
+console.log(count);
+
+
+//ЗАДАНИЕ 4
+let pyramid = [];
+
+for(let i = 0; i < 20; i++) {
+	pyramid[i] = [];
+	for(let j = 0; j <= i; j++) {
+		pyramid[i][j] = 'x';
+	}
+	pyramid[i] = pyramid[i].join('');
+} 
+
+console.log(pyramid);
