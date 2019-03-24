@@ -1,40 +1,36 @@
 "use strict";
+//ЗАДАНИЕ 1
+let number = parseInt(prompt('Введите число от 0 до 999:'));
 
-// ЗАДАНИЕ 4
- function adition(arg1, arg2) {
- 	return(arg1 + arg2);
- }
- alert(adition(20, 10));
-
- function subtraction(arg1, arg2) {
- 	return(arg1 - arg2);
- }
- alert(subtraction(20, 10));
-
- function multiplication(arg1, arg2) {
- 	return(arg1 * arg2);
- }
- alert(multiplication(20, 10));
-
-  function division(arg1, arg2) {
- 	return(arg1 / arg2);
- }
- alert(division(20, 10));
-
-// ЗАДАНИЕ 5
-let operation = prompt('Введите операцию, которую хотите выполнить:');
-
-function mathOperation(arg1, arg2, operation) {
- 	switch (operation) {
- 		case 'adition':
-	 		return adition(arg1, arg2);
-	 	case 'subtraction':
-	 		return subtraction(arg1, arg2);
-	 	case 'multiplication':
-	 		return multiplication(arg1, arg2);
-	 	case 'division':
-	 		return division(arg1, arg2);
- 	}
+function getNubmerInObject(number) {	
+	let numberObject = {};
+	let numberArr = [];
+	while (number) {
+		numberArr.push(number % 10);
+		number = Math.floor(number / 10);
+	} 
+	if (numberArr.length > 3) {
+			console.log('Ошибка! Вы ввели чило больше 999');
+			console.log(numberObject);
+	} else if (numberArr.length === 3) {
+		numberObject['ones'] = numberArr[0];
+		numberObject['tens'] = numberArr[1];
+		numberObject['hundreds'] = numberArr[2];
+		console.log(numberObject);
+		//return numberArr;
+	} else if (numberArr.length === 2) {
+		numberObject['ones'] = numberArr[0];
+		numberObject['tens'] = numberArr[1];
+		console.log(numberObject);
+		//return numberArr;
+	} else if (numberArr.length === 1) {
+		numberObject['ones'] = numberArr[0];
+		console.log(numberObject);
+		//return numberArr;
+	} else if (number === 0) {
+		console.log("Object is null");
+		console.log(numberObject);
+	}
 }
 
-alert(mathOperation(10, 30, operation));
+getNubmerInObject(number);
