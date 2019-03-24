@@ -1,67 +1,36 @@
 "use strict";
 //ЗАДАНИЕ 1
-let a = [
-	 [{name: 'Mary', age: 23}, {name: 'Mike', age: 45}, {name: 'Nick', age: 11}],
-	 [{name: 'Adam', age: 56}, {name: 'Sara', age: 21}, {name: 'Don', age: 22}],
-	 [{name: 'Karl', age: 34}, {name: 'Marta', age: 76}, {name: 'John', age: 19}]
-]; 
+let number = parseInt(prompt('Введите число от 0 до 999:'));
 
-
-let b = [];
-a.forEach(function (arr) {
-	b.push(arr.slice());
-	let c = [];
-	b.forEach(function (newArr) {
-		c.push(Object.assign({}, newArr));
-	});
-});
-
-/*let a = [{name: 'Mary', age: 23}, {name: 'Mike', age: 45}, {name: 'Nick', age: 11}];
-
-let b = [];
-a.forEach(function (arr) {
-		b.push(Object.assign({}, arr));
-});*/
-
-//b[2][2].age = 5665;
-
-console.log(a);
-console.log(b);
-
-//ЗАДАНИЕ 2 ??
-let basket = [	{product: 'iPhone', price: 500}, 
-				{product: 'Samsung', price: 450}, 
-				{product: 'Sony', price: 400} 
-			];
-
-function countBasketPrice() {
-	for (let i = 0; i < basket.length; i++) {
-		let sum = 0;
-		for (let j = 0; j < basket[i].length; j++) {
-			//sum = sum + basket[i].price;
-			//basket[i].price = sum;
-			basket[i].price = 'fdf';
-		}
+function getNubmerInObject(number) {	
+	let numberObject = {};
+	let numberArr = [];
+	while (number) {
+		numberArr.push(number % 10);
+		number = Math.floor(number / 10);
+	} 
+	if (numberArr.length > 3) {
+			console.log('Ошибка! Вы ввели чило больше 999');
+			console.log(numberObject);
+	} else if (numberArr.length === 3) {
+		numberObject['ones'] = numberArr[0];
+		numberObject['tens'] = numberArr[1];
+		numberObject['hundreds'] = numberArr[2];
+		console.log(numberObject);
+		//return numberArr;
+	} else if (numberArr.length === 2) {
+		numberObject['ones'] = numberArr[0];
+		numberObject['tens'] = numberArr[1];
+		console.log(numberObject);
+		//return numberArr;
+	} else if (numberArr.length === 1) {
+		numberObject['ones'] = numberArr[0];
+		console.log(numberObject);
+		//return numberArr;
+	} else if (number === 0) {
+		console.log("Object is null");
+		console.log(numberObject);
 	}
 }
 
-console.log(countBasketPrice());
-
-//ЗАДАНИЕ 3
-let count;
-for (count = 0; count <= 9; count++) 
-console.log(count);
-
-
-//ЗАДАНИЕ 4
-let pyramid = [];
-
-for(let i = 0; i < 20; i++) {
-	pyramid[i] = [];
-	for(let j = 0; j <= i; j++) {
-		pyramid[i][j] = 'x';
-	}
-	pyramid[i] = pyramid[i].join('');
-} 
-
-console.log(pyramid);
+getNubmerInObject(number);
