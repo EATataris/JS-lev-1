@@ -10,8 +10,8 @@ function getNubmerInObject(number) {
 		number = Math.floor(number / 10);
 	} 
 	if (numberArr.length > 3) {
-			console.log('Ошибка! Вы ввели чило больше 999');
-			console.log(numberObject);
+		console.log('Ошибка! Вы ввели чило больше 999');
+		console.log(numberObject);
 	} else if (numberArr.length === 3) {
 		numberObject['ones'] = numberArr[0];
 		numberObject['tens'] = numberArr[1];
